@@ -18,18 +18,43 @@ with Image.open('C:/Users/Bill/Repos_From_SoftWool16/PythonLaba/image/Снимо
 
     print('Задание 3.3:')
     r, g, b, a = image.split()
-    r = Image.eval(r, lambda x: 250 - x)
-    g = Image.eval(g, lambda x: 250 - x)
-    b = Image.eval(b, lambda x: 250 - x)
-    a = Image.eval(b, lambda x: 250 - x)
+    r = Image.eval(r, lambda x: 255 - x)
+    g = Image.eval(g, lambda x: 255 - x)
+    b = Image.eval(b, lambda x: 255 - x)
+    a = Image.eval(b, lambda x: 255 - x)
     image_3_3 = Image.merge('RGB', (r, g, b))
     image_3_3.save("C:/Users/Bill/Repos_From_SoftWool16/PythonLaba/image/Снимок_3-3.PNG")
+    print('-------------')
 
-print('Задание 3.3:')
+
+
 import numpy as np
 
+print('Задание 3.4:')
 random_array = np.random.rand(100)
-
 reshaped_array = random_array.reshape(10, 10)
-
 print(reshaped_array)
+print('-------------')
+
+
+
+
+print('Задание 3.5:')
+random_array_A = np.random.randint(1, 101, size=16).reshape(4, 4)
+random_array_B = np.random.randint(1, 101, size=16).reshape(4, 4)
+print(random_array_A)
+print(random_array_B)
+print(random_array_A + random_array_B)
+print(random_array_A - random_array_B)
+print(random_array_A**2)
+print(random_array_A+100)
+
+print('-------------')
+
+
+print('Задание 3.6:')
+random_array = np.random.randint(1, 101, size=100).reshape(5, 20)
+random_array.sort()
+print(random_array)
+print(np.sort(random_array, 0))
+print('-------------')
